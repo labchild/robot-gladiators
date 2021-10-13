@@ -10,9 +10,15 @@ var playerMoney = 10;
 console.log(playerName, playerAttack, playerHealth);
 
 // initial enemy stats
-var enemyName = "Roborto";
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
+
+// Game states
+// "WIN" – player robot has defeated all enemy robots
+//      * fight all enemy robots
+//      * defeat each enemy robot
+// "LOSE" – player robot's health is zero or less
 
 // the fight begins function
 var fight = function () {
@@ -69,4 +75,4 @@ var fight = function () {
     }
 };
 
-fight();
+// fight();
