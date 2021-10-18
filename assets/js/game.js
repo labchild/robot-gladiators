@@ -1,18 +1,17 @@
 console.log("Welcome, Robots!");
 
+// global variables defined
 // initial player stats
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
 
-// print multiple values to console
-console.log(playerName, playerAttack, playerHealth);
-
 // initial enemy stats
 var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
+//global variables end
 
 // Game states
 // "WIN" – player robot has defeated all enemy robots
@@ -21,7 +20,7 @@ var enemyAttack = 12;
 // "LOSE" – player robot's health is zero or less
 
 // the fight begins function
-var fight = function () {
+var fight = function(enemyName) {
     // Alert players that they are starting the round
     window.alert("Welcome to Robot Gladiators!");
 
@@ -75,4 +74,6 @@ var fight = function () {
     }
 };
 
-// fight();
+for (var i = 0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
+}
