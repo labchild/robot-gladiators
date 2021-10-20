@@ -132,7 +132,7 @@ var startGame = function () {
         if (playerInfo.health > 0) {
             // let player know what round they are in (arrays start at 0, so be sure to +1 for rounds with each robot)
             window.alert('Welcome to Robot Gladiators! Round ' + (i + 1));
-            debugger;
+            // debugger;
             //pick new enemy to fight based on the index of the enemy array
             var pickedEnemyObj = enemyInfo[i];
 
@@ -186,7 +186,7 @@ var endGame = function () {
     } else {
         alert(playerInfo.name + " did not beat the high score of " + highScore + ". Maybe next time!");
     }
-    
+
     //ask if player wants to go again
     var playAgainConfirm = window.confirm("Would you like to play again?");
 
