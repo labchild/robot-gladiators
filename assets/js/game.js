@@ -1,5 +1,11 @@
 console.log("Welcome, Robots!");
 
+//generate a random numerica value 40-60
+var randomNumber = function (min, max) {
+    var value = Math.floor(Math.random() * (max - min + 1)) + min;
+    return value;
+}
+
 //console.log(enemy.name);
 //console.log(enemyInfo.length);
 
@@ -25,7 +31,7 @@ console.log("Welcome, Robots!");
 //      * invalid option will call shop() again
 
 // the fight function begins (with parameter for enemy's name)
-var fight = function (enemy) {
+var fight = function(enemy) {
     while (enemyInfo.health > 0 && playerInfo.health > 0) {
         // ask player if they want to fight or run
         var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
@@ -53,7 +59,9 @@ var fight = function (enemy) {
 
                 // remove enemy's health by subtracting damage
                 enemy.health = Math.max(0, enemy.health - damage);
-                console.log(playerInfo.name + " attacked " + enemy.name + ". " + enemy.name + " now has " + enemy.health + " health remaining.");
+                console.log(
+                    playerInfo.name + " attacked " + enemy.name + ". " + enemy.name + " now has " + enemy.health + " health remaining."
+                    );
 
                 //check enemy's health
                 if (enemy.health <= 0) {
@@ -110,9 +118,6 @@ var startGame = function () {
             //reset enemy.health before starting a new fight
             pickedEnemyObj.health = randomNumber(40, 60);
 
-            //use debugger to pause script from running and check what's going on
-            // debugger
-
             fight(pickedEnemyObj);
 
             //if we're not at the last enemy in the array, option to shop
@@ -139,6 +144,7 @@ var startGame = function () {
 //function to end the game
 var endGame = function () {
     window.alert("The game has now ended. Let's see how you did!");
+    
     //if player is still alive, player win
     if (playerInfo.health > 0) {
         window.alert("Great job, you've survived the game! You now have a score of " + playerInfo.money + ".");
@@ -162,6 +168,7 @@ var shop = function () {
     var shopOptionPrompt = window.prompt(
         "Would you like to REFILL your health, UPGRADE your attack, or LEAVE the shop?"
     );
+
     //use switch statement to go shopping
     switch (shopOptionPrompt) {
         // REFILL option
@@ -194,12 +201,7 @@ var shop = function () {
             break;
     }
 };
-
-//generate a random numerica value 40-60
-var randomNumber = function (min, max) {
-    var value = Math.floor(Math.random() * (max - min + 1)) + min;
-    return value;
-}
+//end of game functions
 
 // global variables defined
 // initial player stats
@@ -248,6 +250,11 @@ var enemyInfo = [
         attack: randomNumber(10, 14)
     }
 ];
+
+console.log(enemyInfo);
+console.log(enemyInfo[0]);
+console.log(enemyInfo[0].name);
+console.log(enemyInfo[0]['attack']);
 //global variables end
 
 //start game when the page loads
